@@ -49,6 +49,7 @@ def apply_coupons(cart, coupons)
     else if item && item[:count] == coupons[coupon_index][:count]
       item[:name] += " W/COUPON"
       item[:clearance] = true
+    end
     coupon_index += 1
   end
 end
