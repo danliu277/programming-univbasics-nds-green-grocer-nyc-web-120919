@@ -43,10 +43,15 @@ def apply_coupons(cart, coupons)
     
     if item != nil && item[:count] >= coupons[coupon_index][:num]
       item[:count] -= coupons[coupon_index][:num]
+      pp "1"
       copy = item.deep_dup
+      pp "2"
       copy[:item] += " W/COUPON"
+      pp "3"
       copy[:count] = coupons[coupon_index][:num]
+      pp "4"
       copy[:price] = coupons[coupon_index][:cost] / coupons[coupon_index][:num]
+      pp "5"
       cart.push(copy)
     # elsif item && item[:count] == coupons[coupon_index][:num]
     #   item[:item] += " W/COUPON"
