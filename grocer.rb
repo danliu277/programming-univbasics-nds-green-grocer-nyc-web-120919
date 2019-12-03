@@ -42,7 +42,7 @@ def apply_coupons(cart, coupons)
     if item && item[:count] > coupons[coupon_index][:count]
       item[:count] -= coupons[coupon_index][:count]
       copy = item.deep_dup
-      copy[:name] +=
+      copy[:name] += " W/"
     coupon_index += 1
   end
 end
