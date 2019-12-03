@@ -43,7 +43,12 @@ def apply_coupons(cart, coupons)
       item[:count] -= coupons[coupon_index][:count]
       copy = item.deep_dup
       copy[:name] += " W/COUPON"
-      copy[:item] = coupons[coupon_index][:count]
+      copy[:count] = coupons[coupon_index][:count]
+      copy[:clearance] = true
+      cart.push(copy)
+    else if item && item[:count] == coupons[coupon_index][:count]
+      item[:name] += " W/COUPON"
+      item[:clearance] = true
     coupon_index += 1
   end
 end
