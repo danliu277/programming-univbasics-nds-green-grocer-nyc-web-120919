@@ -20,7 +20,10 @@ def consolidate_cart(cart)
   index = 0
   result = []
   while cart[index] do 
-    if result.detect{|item| item[:item]}
+    if result.detect{|item| item[:item] == cart[index][:item]}
+      reuslt.push(cart[index])
+    else
+      
     index += 1
   end
   return result
