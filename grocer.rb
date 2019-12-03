@@ -44,8 +44,9 @@ def apply_coupons(cart, coupons)
     if item != nil && item[:count] >= coupons[coupon_index][:num]
       item[:count] -= coupons[coupon_index][:num]
       copy = {
-        :item => item[:item] += " W/COUPON",
+        :item => item[:item] + " W/COUPON",
         :count => coupons[coupon_index][:num],
+        :clearance => item[:clearance]
         :price => coupons[coupon_index][:cost] / coupons[coupon_index][:num]
       }
       cart.push(copy)
