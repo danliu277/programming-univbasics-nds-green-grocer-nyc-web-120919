@@ -22,8 +22,11 @@ def consolidate_cart(cart)
   while cart[index] do 
     exist = result.detect{|item| item[:item] == cart[index][:item]}
     if exist
-      exist[]
-      
+      exist[:count] += 1
+    else
+      exist[:count] = 1
+      result.push(exist)
+    end
     index += 1
   end
   return result
