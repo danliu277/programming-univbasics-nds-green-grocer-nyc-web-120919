@@ -39,7 +39,7 @@ def apply_coupons(cart, coupons)
   coupon_index = 0
   while coupons[coupon_index] do 
     if item && item[:count] == coupons[coupon_index][:num]
-    pp "hi hi"
+      pp "hi hi"
     end
     item = cart.find{|x| x[:item] == coupons[coupon_index][:item]}
     # if item != nil && item[:count] > coupons[coupon_index][:num]
