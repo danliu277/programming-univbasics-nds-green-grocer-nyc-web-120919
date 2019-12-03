@@ -38,7 +38,7 @@ def apply_coupons(cart, coupons)
   # REMEMBER: This method **should** update cart
   coupon_index = 0
   while coupons[coupon_index] do 
-    dup = co
+    copy = cart.find{x[:item] == coupons[coupon_index][:item]}
     coupon_index += 1
   end
 end
