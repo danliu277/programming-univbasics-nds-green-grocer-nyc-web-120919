@@ -49,7 +49,6 @@ def apply_coupons(cart, coupons)
       pp "here copy", copy
       cart.push(copy)
     elsif item && item[:count] == coupons[coupon_index][:num]
-      pp "hi"
       item[:item] += " W/COUPON"
       item[:price] = coupons[coupon_index][:price]
       pp "here same", item
