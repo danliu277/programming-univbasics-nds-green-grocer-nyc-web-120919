@@ -37,25 +37,25 @@ def apply_coupons(cart, coupons)
   #
   # REMEMBER: This method **should** update cart
   coupon_index = 0
-  pp "hi"
-  pp "first", cart, coupons
+  # pp "hi"
+  # pp "first", cart, coupons
   while coupons[coupon_index] do 
     item = cart.find{|x| x[:item] == coupons[coupon_index][:item]}
     
-    if item != nil && item[:count] > coupons[coupon_index][:num]
+    if item != nil && item[:count] >= coupons[coupon_index][:num]
       item[:count] -= coupons[coupon_index][:num]
       copy = item.deep_dup
       copy[:item] += " W/COUPON"
       copy[:count] = coupons[coupon_index][:num]
       copy[:price] = coupons[coupon_index][:cost] / coupons[coupon_index][:num]
       cart.push(copy)
-    elsif item && item[:count] == coupons[coupon_index][:num]
-      item[:item] += " W/COUPON"
-      item[:price] = coupons[coupon_index][:cost] / coupons[coupon_index][:num]
+    # elsif item && item[:count] == coupons[coupon_index][:num]
+    #   item[:item] += " W/COUPON"
+    #   item[:price] = coupons[coupon_index][:cost] / coupons[coupon_index][:num]
     end
     coupon_index += 1
   end
-  pp "second",cart
+  # pp "second",cart
   return cart
 end
 
