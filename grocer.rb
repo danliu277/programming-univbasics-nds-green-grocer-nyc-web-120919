@@ -46,7 +46,7 @@ def apply_coupons(cart, coupons)
       copy = {
         :item => item[:item] + " W/COUPON",
         :count => coupons[coupon_index][:num],
-        :clearance => item[:clearance]
+        :clearance => item[:clearance],
         :price => coupons[coupon_index][:cost] / coupons[coupon_index][:num]
       }
       cart.push(copy)
