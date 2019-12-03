@@ -81,12 +81,13 @@ def checkout(cart, coupons)
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
   
+  pp cart, coupons
   result = consolidate_cart(cart)
-  # pp "1",result, coupons
+  pp "1",result, coupons
   result = apply_coupons(result, coupons)
-  # pp "2",result
+  pp "2",result
   result = apply_clearance(result)
-  # pp "3",result
+  pp "3",result
   index = 0
   sum = 0
   while result[index] do
