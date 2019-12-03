@@ -39,6 +39,7 @@ def apply_coupons(cart, coupons)
   coupon_index = 0
   while coupons[coupon_index] do 
     copy = cart.find{|x| x[:item] == coupons[coupon_index][:item]}
+    if(copy && copy[])
     coupon_index += 1
   end
 end
