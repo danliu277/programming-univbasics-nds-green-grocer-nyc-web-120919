@@ -90,7 +90,7 @@ def checkout(cart, coupons)
   index = 0
   sum = 0
   while result[index] do
-    sum += result[index][:price]
+    sum += result[index][:price] * result[index][:count]
     index += 1
   end
   return sum
