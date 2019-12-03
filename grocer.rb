@@ -44,12 +44,10 @@ def apply_coupons(cart, coupons)
       copy = item.deep_dup
       copy[:name] += " W/COUPON"
       copy[:count] = coupons[coupon_index][:count]
-      copy[:clearance] = true
       copy[:price] = coupons[coupon_index][:price]
       cart.push(copy)
     elsif item && item[:count] == coupons[coupon_index][:count]
       item[:name] += " W/COUPON"
-      item[:clearance] = true
       item[:price] = coupons[coupon_index][:price]
     end
     coupon_index += 1
@@ -61,6 +59,10 @@ def apply_clearance(cart)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
+  index = 0
+  while cart[index] do
+    cart[index][:price] *= .8 if cart[index][:clearance]
+  end
 end
 
 def checkout(cart, coupons)
