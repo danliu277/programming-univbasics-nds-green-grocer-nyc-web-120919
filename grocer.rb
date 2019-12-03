@@ -91,5 +91,6 @@ def checkout(cart, coupons)
     index += 1
   end
   if sum > 100
+    sum *= 
   return sum
 end
