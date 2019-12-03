@@ -40,15 +40,15 @@ def apply_coupons(cart, coupons)
   while coupons[coupon_index] do 
     item = cart.find{|x| x[:item] == coupons[coupon_index][:item]}
     pp item
-    if item && item[:count] > coupons[coupon_index][:count]
+    if item && item[:count] > coupons[coupon_index][:num]
       item[:count] -= coupons[coupon_index][:count]
       copy = item.deep_dup
       copy[:name] += " W/COUPON"
-      copy[:count] = coupons[coupon_index][:count]
+      copy[:count] = coupons[coupon_index][:num]
       copy[:price] = coupons[coupon_index][:price]
       pp "here copy", copy
       cart.push(copy)
-    elsif item && item[:count] == coupons[coupon_index][:count]
+    elsif item && item[:count] == coupons[coupon_index][:num]
       item[:name] += " W/COUPON"
       item[:price] = coupons[coupon_index][:price]
       pp "here same", item
