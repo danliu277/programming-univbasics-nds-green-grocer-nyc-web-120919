@@ -41,7 +41,7 @@ def apply_coupons(cart, coupons)
     item = cart.find{|x| x[:item] == coupons[coupon_index][:item]}
     
     if item != nil && item[:count] > coupons[coupon_index][:num]
-      item[:count] -= coupons[coupon_index][:count]
+      item[:count] -= coupons[coupon_index][:num]
       copy = item.deep_dup
       copy[:item] += " W/COUPON"
       copy[:count] = coupons[coupon_index][:num]
