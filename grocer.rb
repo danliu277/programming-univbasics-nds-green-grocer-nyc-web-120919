@@ -20,7 +20,7 @@ def consolidate_cart(cart)
   index = 0
   result = []
   while cart[index] do 
-    if result
+    if result.detect()
     index += 1
   end
   return result
