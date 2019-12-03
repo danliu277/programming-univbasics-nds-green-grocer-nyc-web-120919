@@ -20,9 +20,9 @@ def consolidate_cart(cart)
   index = 0
   result = []
   while cart[index] do 
-    if result.detect{|item| item[:item] == cart[index][:item]}
-      reuslt.push(cart[index])
-    else
+    exist = result.detect{|item| item[:item] == cart[index][:item]}
+    if exist
+      exist[]
       
     index += 1
   end
