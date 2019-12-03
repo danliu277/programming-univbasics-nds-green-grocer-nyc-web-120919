@@ -48,12 +48,13 @@ def apply_coupons(cart, coupons)
       copy[:name] += " W/COUPON"
       copy[:count] = coupons[coupon_index][:count]
       copy[:clearance] = true
-      copy[:price]
+      copy[:price] = coupons[coupon_index][:price]
       pp "here greater", copy
       cart.push(copy)
     elsif item && item[:count] == coupons[coupon_index][:count]
       item[:name] += " W/COUPON"
       item[:clearance] = true
+      item[:price] = coupons[coupon_index][:price]
       pp "here same"
     end
     coupon_index += 1
