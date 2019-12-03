@@ -38,10 +38,11 @@ def apply_coupons(cart, coupons)
   # REMEMBER: This method **should** update cart
   coupon_index = 0
   while coupons[coupon_index] do 
+    item = cart.find{|x| x[:item] == coupons[coupon_index][:item]}
     if item && item[:count] == coupons[coupon_index][:num]
       pp "hi hi"
     end
-    item = cart.find{|x| x[:item] == coupons[coupon_index][:item]}
+    
     # if item != nil && item[:count] > coupons[coupon_index][:num]
     #   item[:count] -= coupons[coupon_index][:count]
     #   copy = item.deep_dup
