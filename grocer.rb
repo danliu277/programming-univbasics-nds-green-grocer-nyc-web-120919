@@ -24,8 +24,8 @@ def consolidate_cart(cart)
     if exist
       exist[:count] += 1
     else
-      exist[:count] = 1
-      result.push(exist)
+      cart[index][:count] = 1
+      result.push(cart[index])
     end
     index += 1
   end
