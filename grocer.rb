@@ -86,5 +86,5 @@ def checkout(cart, coupons)
   index = 0
   sum = 0
   while result[index] do
-    sum +=
+    sum += result[index]
 end
