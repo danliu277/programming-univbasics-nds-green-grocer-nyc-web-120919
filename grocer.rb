@@ -52,7 +52,7 @@ def apply_coupons(cart, coupons)
     if item && item[:count] == coupons[coupon_index][:num]
       item[:name] += " W/COUPON"
       item[:price] = coupons[coupon_index][:price]
-    #   pp "here same", item
+      pp "here same", item
     end
     coupon_index += 1
   end
